@@ -25,4 +25,4 @@ $('body').on('click', '.byJavsScript', function (){
 	
 $('body').append('<div class="byJavsScript">Created by JS</div>')
 
-	
+$('p').html('!');	
