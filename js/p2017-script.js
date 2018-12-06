@@ -1,3 +1,10 @@
+window.onload = function(){
+	document.querySelector('.btnStart').onclick = function(){
+		training();
+	}
+}
+
+
 function mathOp(a, b, op){
 	var res;
 	
@@ -58,10 +65,17 @@ function training(){
 		}
 	}
 
-	console.log('Good answers = ' + good);
-	console.log('Bad answers = ' + error);
+	document.querySelector('.good').innerHTML = good;
+	document.querySelector('.bad').innerHTML = error;
+
+	var divErrors = document.querySelector('.errors');
+	divErrors.innerHTML = '';
+
+	// console.log('Good answers = ' + good);
+	// console.log('Bad answers = ' + error);
 	for(var i = 0; i < errors.length; i++){
-		console.log(errors[i]);
+		//console.log(errors[i]);
+		divErrors.innerHTML += ('<p>' + errors[i] + '</p>');
 	}
 }
 
