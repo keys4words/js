@@ -1,4 +1,3 @@
-<script>
 function mathOp(a, b, op){
 	var res;
 	
@@ -35,39 +34,30 @@ function randomInt(min, max){
 }
 
 
-function codeToOp(num){
-	var res;
-	
-	if(num == 0){
-		res = '+';
-	}
-	else if(num == 1){
-		res = '-';
-	}
-	else if(num == 2){
-		res = '*';
-	}
-	else if(num == 3){
-		res = '/';
-	}
-	return res;
-}
+var x, y, op, res, answer, answerStr, good = 0, error = 0, errors = [];
+var variants = ['+', '-', '*', '/'];
 
-var x, y, op, res, answer;
-
-for(var i = 0; i < 10; i++){
+for(var i = 0; i < 5; i++){
 	x = randomInt(3, 15);
 	y = randomInt(3, 15);
 	code = randomInt(0, 3);
-	op = codeToOp(code);
+	op = variants[randomInt(0, 3)];
 	res = mathOp(x, y, op);
-	answer = +prompt(x + ' ' + op + ' ' + y + ' = ?');
 	
-	if(res == answer){
-		console.log('Nice');
+	do{
+		answerStr = prompt(x + ' ' + op + ' ' + y + ' = ?');
+		answer = +answerStr;
+	}while(answerStr == '' || isNaN(answer));
+	
+	if(res.toFixed(2) == answer.toFixed(2)){
+		good++;
+		//console.log('Nice');
 	}else{
-		console.log('Stupid  ' + x + ' ' + op + ' ' + y + ' = ' + res);
+		error++;
+		errors.push('Stupid  ' + x + ' ' + op + ' ' + y + ' = ' + res.toFixed(2) + ' and your answer was = ' + answerStr);
 	}
 }
 
-</script>
+console.log('Good answers = ' + good);
+console.log('Bad answers = ' + error);
+
