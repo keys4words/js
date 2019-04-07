@@ -1,0 +1,11 @@
+var y = document.getElementById('abc');
+console.log("Element with tag 'abc' has a type - " + y.nodeType);
+console.log("Element with tag 'abc' has a innerHTML - " + y.innerHTML);
+// console.log("Element with tag 'abc' has a childNodes - " + y.childNodes);
+y.setAttribute('align', 'right');
+var list = document.getElementsByClassName("list_one");
+// console.log("Elements with tag name 'li' have a type - " + list.nodeType);
+console.log("Qty of li = " + list.length);
+// console.log("Elements with tag name 'li' have a innerHTML - " + list.innerHTML);
+var myPar = document.getElementsByClassName("first_par");
+console.log("Elements with class name 'first_par' have a innerHTML - " + myPar[0].innerHTML);
