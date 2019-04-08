@@ -8,4 +8,5 @@ var list = document.getElementsByClassName("list_one");
 console.log("Qty of li = " + list.length);
 // console.log("Elements with tag name 'li' have a innerHTML - " + list.innerHTML);
 var myPar = document.getElementsByClassName("first_par");
-console.log("Elements with class name 'first_par' have a innerHTML - " + myPar[0].innerHTML);
+//console.log("Elements with class name 'first_par' have a innerHTML - " + myPar[0].innerHTML);
+myPar[0].innerHTML = 'Maximus wins';
