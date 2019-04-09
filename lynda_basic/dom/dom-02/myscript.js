@@ -1,11 +1,39 @@
 var emailField = document.getElementById("email");
-emailField.onfocus = function(){
-    if(emailField.value == "your email"){
-        emailField.value = "";
+// emailField.onfocus = function(){
+//     if(emailField.value == "your email"){
+//         emailField.value = "";
+//     }
+// };
+// emailField.onblur = function(){
+//     if(emailField.value == ""){
+//         emailField.value = "your email";
+//     }
+// };
+
+function simpleMessage(){
+    alert("This is just an alert box");
+}
+
+//setTimeout(simpleMessage, 5000);
+
+var myImage = document.getElementById("mainImage");
+var imageArray = ["_images/overlook.jpg", "_images/winery_sign.jpg", 
+    "_images/lunch.jpg", "_images/bigSur.jpg", "_images/flag_photo.jpg",
+    "_images/mission_look.jpg"];
+var imageIndex = 0;
+
+//console.log(imageArray[0]);
+
+function changeImage(){
+    myImage.setAttribute("src", imageArray[imageIndex]);
+    imageIndex++;
+    if(imageIndex >= imageArray.length){
+        imageIndex = 0;
     }
-};
-emailField.onblur = function(){
-    if(emailField.value == ""){
-        emailField.value = "your email";
-    }
-};
+}
+
+var intervalHandle = setInterval(changeImage, 5000);
+
+myImage.onclick = function(){
+    clearInterval(intervalHandle);
+}
