@@ -1,5 +1,9 @@
 $(function(){
-	var elem = $('')
+	var elem = $('#menu')
+	//console.log(elem)
+	var res = elem.html()
+	alert(res)
+	
 });
 /* $(document).ready(function(){
 	var elem = $('#menu li');
