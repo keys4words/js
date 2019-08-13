@@ -9,3 +9,12 @@ notes.unshift('New element')
 notes[0] = 'This is the new second item'
 
 console.log(notes)
+
+notes.forEach(function(item, index){
+    console.log(index)
+    console.log(item)
+})
+
+for(let i = notes.length-1; i >= 0; i--){
+    console.log(notes[i])
+}
