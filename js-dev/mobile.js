@@ -22,11 +22,26 @@ window.addEventListener('DOMContentLoaded', function(){
     // });
 
     // new RegExp('pattern', 'flags');
-    let ans = prompt('Input your name');
-    let reg = /n/g;
+    // let ans = prompt('Input your name');
+    // let reg = /n/g;
     // console.log(ans.search(reg));
-    console.log(ans.match(reg));
+    // console.log(ans.match(reg));
+    // console.log(reg.test(ans));
     
 
+    // let pass = prompt('Input your password');
+    
+    // console.log(pass.replace(/./g, '*'));
+    // alert('345-345-55'.replace(/-/g, ':'));
+    
+    
+    // let ans = prompt('Input your number');
+    // let reg = /\d/g;
+    // console.log(ans.match(reg));
+
+    let str = 'My name is R2D2';
+    console.log(str.match(/\w\d\w\d/i));
+    
+    
 
 });
