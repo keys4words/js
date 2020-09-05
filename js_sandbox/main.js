@@ -15,8 +15,8 @@ const name = 'John Smith';
 const age1 = 34;
 const rating = 4.5;
 const isCool = true;
-const x = null;
-const y = undefined;
+// const x = null;
+// const y = undefined;
 let z;
 
 // console.log(typeof z);
@@ -97,5 +97,40 @@ const todosJSON = JSON.stringify(todos);
 
 // for of
 for(let todo of todos){
-    console.log(todo.text);
+    // console.log(todo.text);
+}
+
+// foreach
+todos.forEach(function(todo) {
+    // console.log(todo.text);
+});
+
+// map
+const todoList = todos.map(function(todo){
+    return todo.text;
+});
+// console.log(todoList);
+
+// filter
+const todoList2 = todos.filter(function(todo){
+    return todo.isCompleted === true;
+});
+
+// console.log(todoList2);
+
+// conditions
+const x = 15;
+const y = 20;
+if (x === 10 || y > 15){
+    console.log('x is 10');
+} else if (x > 10) {
+    console.log('x is greater than 10');
+} else {
+    console.log('x is lower than 10');
+}
+
+if (5 > 4 && 6 > 7){
+    console.log('true');
+} else {
+    console.log('false');
 }
