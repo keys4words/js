@@ -63,25 +63,25 @@ let z;
 // person.email = 'j.bond@mi6.gov';
 // console.log(person);
 
-todos = [
-    {
-        id: 1,
-        text: 'to remove trash',
-        isCompleted: false
-    },
-    {
-        id: 2,
-        text: 'to make a light',
-        isCompleted: false
-    },
-    {
-        id: 3,
-        text: 'to workout',
-        isCompleted: true
-    }
-];
+// todos = [
+//     {
+//         id: 1,
+//         text: 'to remove trash',
+//         isCompleted: false
+//     },
+//     {
+//         id: 2,
+//         text: 'to make a light',
+//         isCompleted: false
+//     },
+//     {
+//         id: 3,
+//         text: 'to workout',
+//         isCompleted: true
+//     }
+// ];
 // console.log(todos[1].text);
-const todosJSON = JSON.stringify(todos);
+// const todosJSON = JSON.stringify(todos);
 // console.log(todosJSON);
 
 // for loop
@@ -96,41 +96,88 @@ const todosJSON = JSON.stringify(todos);
 // };
 
 // for of
-for(let todo of todos){
-    // console.log(todo.text);
-}
+// for(let todo of todos){
+//     // console.log(todo.text);
+// }
 
-// foreach
-todos.forEach(function(todo) {
-    // console.log(todo.text);
-});
+// // foreach
+// todos.forEach(function(todo) {
+//     // console.log(todo.text);
+// });
 
-// map
-const todoList = todos.map(function(todo){
-    return todo.text;
-});
-// console.log(todoList);
+// // map
+// const todoList = todos.map(function(todo){
+//     return todo.text;
+// });
+// // console.log(todoList);
 
-// filter
-const todoList2 = todos.filter(function(todo){
-    return todo.isCompleted === true;
-});
+// // filter
+// const todoList2 = todos.filter(function(todo){
+//     return todo.isCompleted === true;
+// });
 
 // console.log(todoList2);
 
 // conditions
-const x = 15;
-const y = 20;
-if (x === 10 || y > 15){
-    console.log('x is 10');
-} else if (x > 10) {
-    console.log('x is greater than 10');
-} else {
-    console.log('x is lower than 10');
+// const x = 15;
+// const y = 20;
+// if (x === 10 || y > 15){
+//     console.log('x is 10');
+// } else if (x > 10) {
+//     console.log('x is greater than 10');
+// } else {
+//     console.log('x is lower than 10');
+// }
+
+// if (5 > 4 && 6 > 7){
+//     console.log('true');
+// } else {
+//     console.log('false');
+// }
+
+// const x1 = 10;
+// const color = x1 > 10 ? 'red' : 'blue';
+// console.log(color);
+
+// switch(color){
+//     case 'red':
+//         console.log('color is red');
+//         break;
+//     case 'green':
+//         console.log('color is green');
+//         break;
+//     default:
+//         console.log('color is default');
+//         break;
+// }
+
+// functions
+// function addNums(num1, num2=10){
+//     return num1 + num2;
+// }
+
+// console.log(addNums(4));
+
+// // functions in es6
+// const addNumbers = (num1 = 2, num2 = 2) => num1 + num2;
+// console.log(addNumbers());
+
+// todos.forEach((todo) => console.log(todo));
+
+// oop
+function Person(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+    this.getBirthYear = function(){
+        return this.dob.getFullYear();
+    }
+    this.getFullName = function(){
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
 
-if (5 > 4 && 6 > 7){
-    console.log('true');
-} else {
-    console.log('false');
-}
+const person1 = new Person('Ivan', 'Ivanov', '10-01-1980');
+console.log(person1);
+console.log(person1.getBirthYear());
+console.log(person1.getFullName());
