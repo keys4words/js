@@ -165,19 +165,37 @@ let z;
 // todos.forEach((todo) => console.log(todo));
 
 // oop
-function Person(firstName, lastName, dob) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.dob = new Date(dob);
-    this.getBirthYear = function(){
+// function Person(firstName, lastName, dob) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.dob = new Date(dob);
+//     this.getBirthYear = function(){
+//         return this.dob.getFullYear();
+//     }
+//     this.getFullName = function(){
+//         return `${this.firstName} ${this.lastName}`;
+//     }
+// }
+
+// const person1 = new Person('Ivan', 'Ivanov', '10-01-1980');
+// console.log(person1);
+// console.log(person1.getBirthYear());
+// console.log(person1.getFullName());
+
+// oop in es6
+class Person{
+    constructor(firstName, lastName, dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+    getBirthYear(){
         return this.dob.getFullYear();
     }
-    this.getFullName = function(){
+
+    getFullName(){
         return `${this.firstName} ${this.lastName}`;
     }
 }
-
 const person1 = new Person('Ivan', 'Ivanov', '10-01-1980');
-console.log(person1);
-console.log(person1.getBirthYear());
-console.log(person1.getFullName());
+// console.log(person1);
