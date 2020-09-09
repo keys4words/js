@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            /*$('p.param1').css({color: 'red',
+                                background: '#ccc'});
+            $('p.param2').addClass('myClass');
+            $('p.param2').removeClass('myClass');
+            $('#btn1').click(function(){
+                $('p.param2').toggleClass('myClass');
+            });
+            $('#myDiv').text('Hello World');
+            $('#myDiv').html('<h3>Hello World</h3>');
+            alert($('#myDiv').text());
+            $('ul').append('<li>Appended Item</li>');
+            $('ul').prepend('<li>Prepended Item</li>');
+            $('.param1').appendTo('.param2');
+            $('.param1').prependTo('.param2');
+            $('ul').before('<h4>Before and outside ul</h4>');
+            $('ul').after('<h4>After and outside ul</h4>');
+            $('ul').empty();
+            $('ul').detach();
+            $('a').attr('target', '_blank');
+            console.log($('a').attr('href'));
+            $('a').removeAttr('target');
+            $('p').wrap('<div class="special">');
+            $('p').wrapAll('<div class="special">');*/
+            $('#newItem').keyup(function(e){
+                let code = e.which;
+                if(code == 13){
+                    e.preventDefault();
+                    $('ul').append('<li>'+e.target.value+'</li>');
+                }
+            });
+            /*let myArr = ['Brad', 'James', 'Mike', 'Ann'];
+            $.each(myArr, function(i, val){
+                $('#users').append('<li>'+val+'</li>');
+            })*/
+            let newArr = $('ul#list li').toArray();
+            $.each(newArr, function(i, val){
+                console.log(val.innerHTML);
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+        .myClass {
+            color: blue;
+            background: grey;
+        }
+    </style>
+    <title>jQuery Crash Course</title>
+</head>
+
+<body>
+    <header>
+        <h1>DOM Manipulation</h1>
+    </header>
+    <div id="container">
+        <button id="btn1">Button 1</button>
+        <p class="param1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae maxime quasi dignissimos, eveniet quae dolores, asperiores facilis ab sit officiis blanditiis, accusantium in a veniam placeat? Illo sit quos alias, consequuntur, pariatur incidunt veniam praesentium eligendi iure molestiae, quas consequatur?</p>
+        <p class="param2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fugiat quam quod explicabo cum dignissimos quos, est impedit, dolor, ipsum sequi voluptatem iste unde. Accusamus ea dignissimos eum deleniti consequatur?</p>
+        <div id="myDiv"></div>
+        <input type="text" name="newItem" id="newItem">
+        <br>
+        <ul id="list">
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ul>
+        <a href="http://yandex.ru">Yandex</a>
+        <ul id="users">
+
+        </ul>
+    </div>
+
+</body>
+
+</html>
