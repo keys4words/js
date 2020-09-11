@@ -24,3 +24,6 @@ $(function(){
         }
     });
 })
+
+// key=API_KEY
+// AIzaSyBOPLV3xVyeL6crpV9acLEyRSs7McPeAxU
