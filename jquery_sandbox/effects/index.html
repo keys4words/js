@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.btnFadeOut').click(function(){
+                $('.box').fadeOut(3000, function(){
+                    $('.btnFadeOut').text("It's gone");
+                });
+            });
+            $('.btnFadeIn').click(function(){
+                $('.box').fadeIn(3000);
+            });
+            $('.btnFadeToggle').click(function(){
+                $('.box').fadeToggle(1000);
+            });
+            $('.btnSlideUp').click(function(){
+                $('.box').slideUp(3000);
+            });
+            $('.btnSlideDown').click(function(){
+                $('.box').slideDown(3000);
+            });
+            $('.btnSlideTog').click(function(){
+                $('.box').slideToggle(1000);
+            });
+            $('.btnStop').click(function(){
+                $('.box').stop();
+            });
+            $('.moveRight').click(function(){
+                $('.box2').animate({
+                    left: 500,
+                    height: '300px',
+                    width: '300px',
+                    opacity: '0.5'
+                });
+            });
+            $('.moveLeft').click(function(){
+                $('.box2').animate({
+                    left: 0,
+                    height: '100px',
+                    width: '100px',
+                    opacity: '1'
+                });
+            });
+            $('.moveAround').click(function(){
+                let box = $('.box2');
+                box.animate({
+                    left: 300
+                });
+                box.animate({
+                    top: 300
+                });
+                box.animate({
+                    left: 0,
+                    top: 300
+                });
+                box.animate({
+                    left: 0,
+                    top: 0
+                });
+            })
+
+        });
+    </script>
+    <style>
+        body {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+        .myClass {
+            color: blue;
+            background: grey;
+        }
+        .box{
+            background: #333;
+            color: #fff;
+            width: 500px;
+            height: 90px;
+            padding: 40px;
+            text-align: center;
+        }
+        .box2{
+            margin-top: 30px;
+            background:red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+    <title>jQuery Crash Course</title>
+</head>
+
+<body>
+    <header>
+        <h1>Effects & Animations</h1>
+    </header>
+    <div id="container">
+        <button class="btnFadeOut">Fade Out</button>
+        <button class="btnFadeIn">Fade In</button>
+        <button class="btnFadeToggle">Fade Toggle</button>
+        <hr>
+        <div class="box">
+            <h1>Something in h1</h1>
+        </div>
+        <br>
+        <button class="btnSlideUp">SlideUp</button>
+        <button class="btnSlideDown">SlideDown</button>
+        <button class="btnSlideTog">Slide Tog</button>
+        <button class="btnStop">Stop!</button>
+        <hr>
+        <button class="moveLeft">Move left</button>
+        <button class="moveRight">Move right</button>
+        <button class="moveAround">Move around</button>
+        <br>
+        <div class="box2">
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
