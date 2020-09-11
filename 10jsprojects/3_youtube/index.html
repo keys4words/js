@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <title>Search Vidz</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Search<span>Vidz</span></h1>
+            <p>Search all Youtube videos</p>
+		</header>
+		<section>
+            <form id="search-form" name="search-form" onsubmit="return search()">
+                <div class="fieldcontainer">
+                    <input type="search" class="search-field" id="query" placeholder="Search Youtube">
+                    <input type="submit" name="search-btn" id="search-btn" value="">
+                </div>
+            </form>
+            <ul class="results">
+                <div class="buttons">
+
+                </div>
+            </ul>
+        </section>
+		<footer>
+            <p> Copyright &copy; 2020. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
