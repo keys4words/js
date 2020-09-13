@@ -1,6 +1,6 @@
 $(function(){
-    let searchField = $('#query');
-    let icon = $('#search-btn');
+    var searchField = $('#query');
+    var icon = $('#search-btn');
 
     //focus event handler
     $(searchField).on('focus', function(){
@@ -23,7 +23,26 @@ $(function(){
             }, 400, function(){})
         }
     });
-})
 
-// key=API_KEY
-// AIzaSyBOPLV3xVyeL6crpV9acLEyRSs7McPeAxU
+    $('#search-form').submit(function (e) {
+        e.preventDefault();
+
+    });
+});
+
+function search() {
+    $('.results').html('');
+    $('.buttons').html('');
+
+    q = $('#query').val();
+    var key = 'AIzaSyBOPLV3xVyeL6crpV9acLEyRSs7McPeAxU';
+    $.get(
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&key="+key+"&type=video&q=" + q + "&order=viewCount",
+            function(data){
+                var nextPageToken = data.nextPageToken;
+                var prevPageToken = data.prevPageToken;
+                console.log(data);
+            }
+    );
+
+}
