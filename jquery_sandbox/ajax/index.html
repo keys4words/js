@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+           /*$('.results').load('test.html', function(responseTxt, statusTxt, xhr){
+               if(statusTxt == 'success'){
+                   alert("It's oke");
+               } else if(statusTxt == 'error'){
+                   alert('Error: ' + xhr.statusText);
+               }
+           });
+           $.get('test.html', function(data) {
+               $('.results').html(data);
+           });
+           $.getJSON('products.json', function(data){
+               $.each(data, function(i, product){
+                $('ul.products').append('<li>' + product.product_name + '</li>');
+               });
+           });
+           $.ajax({
+               method: 'GET',
+               url: 'https://jsonplaceholder.typicode.com/posts',
+               dataType: 'json'
+           }).done(function(data){
+               console.log(data);
+               $.map(data, function(post, i) {
+                   $('ul.products').append('<li>' + post.title + '</li>');
+                   
+               })
+           })*/
+           $('#postForm').submit(function(e){
+            e.preventDefault();
+
+            var title = $('#title').val();
+            var body = $('#body').val();
+            var url = $(this).attr('action');
+            console.log(title + ' -> ' + body + ' -> ' + url);
+            $.post(url, {title: title, body:body}).done(function(data){
+                console.log('Post saved');
+                console.log(data);
+            });
+           });
+
+
+        });
+    </script>
+    <style>
+        body {
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+        .myClass {
+            color: blue;
+            background: grey;
+        }
+    </style>
+    <title>jQuery Crash Course</title>
+</head>
+
+<body>
+    <header>
+        <h1>AJAX</h1>
+    </header>
+    <div class="container">
+        <div class="results">
+            <ul class="products">
+
+            </ul>
+        </div>
+        <form method="POST" action="https://jsonplaceholder.typicode.com/posts" id="postForm">
+            <h3>Add Post</h3>
+            <input type="text" name="title" id="title" placeholder="Title">
+            <br>
+            <textarea name="body" id="body" cols="30" rows="10" placeholder="Your post text"></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
