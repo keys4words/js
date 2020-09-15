@@ -7,14 +7,42 @@
     <script src="main.js"></script>
     <title>JS flow</title>
 </head>
-<body>
-    <div class="header">
-        <h1>Learning JS flow</h1>
+<body id="body">
+    <div id="header" class="header">
+        <h1 class="heading">Learning JS flow</h1>
         <p>My own practice</p>
     </div>
 
     <div class="container">
-
+        <!-- <button onclick="doClick()">Click me</button> -->
+        <!-- <button onclick="this.innerHTML = 'You clicked!'">Click me</button> -->
+        <!-- <button onclick="changeText(this)">Click me</button> -->
+        <!-- <button onclick="changeText()">Click me</button> -->
+        <!-- <button onmouseover="showDate()" onmouseout="clearDate()">Click me</button> -->
+        <!-- <h2 class="time"></h2> -->
+        <form action="something.php" method="post" name="myForm" onsubmit="return validateForm()">
+            <div>
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName">
+            </div>
+            <br>
+            <div>
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName">
+            </div>
+            <br>
+            <div>
+                <label for="background">Background</label>
+                <select name="background" id="background" onchange="changeBackground(this)">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 </body>
 </html>
