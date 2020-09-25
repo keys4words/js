@@ -24,10 +24,14 @@ class Book {
 
 }
 
-const book1 = new Book('Book One', 'John Doe', 2013);
-console.log(book1);
-console.log(book1.getSummary());
-console.log(book1.getAge());
-book1.revise(1952);
-console.log(book1);
-console.log(Book.topBookStore());
+// Magazine sublclass
+class Magazine extends Book {
+    constructor(title, author, year, month){
+        super(title, author, year);
+        this.month = month;
+    }
+}
+
+
+const mag = new Magazine('Mag One', 'John Doe', 1999, 'Oct');
+console.log(mag.getSummary());
