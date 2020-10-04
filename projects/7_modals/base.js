@@ -1,0 +1,3 @@
+// jquery analog
+const $ = {};
+window.$ = $;
