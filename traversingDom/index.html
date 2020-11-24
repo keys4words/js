@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .grandparent{
+            background-color: hsl(0, 50%, 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 600px;
+            padding: 50px;
+        }
+        .parent{
+            background-color: hsl(100, 50%, 50%);
+            height: 300px;
+            width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .child{
+            background-color: hsl(200, 50%, 50%);
+            width: 900px;
+            height: 200px;
+            margin: 50px 20px;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+        <div class="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+    </div>
+</body>
+</html>
