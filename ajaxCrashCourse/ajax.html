@@ -20,7 +20,8 @@
             // create xhr Object
             var xhr = new XMLHttpRequest();
             // OPEN - type, url/file, async
-            xhr.open('GET', 'sample2.txt', true);
+            // xhr.open('GET', 'sample.txt', true);
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
 
             // readyState values
             // 0: request not initialized
@@ -52,8 +53,9 @@
             xhr.onload = function(){
                 console.log('READYSTATE: ', xhr.readyState);
                 if(this.status == 200){
-                    // console.log(this.responseText);
-                    document.getElementById('text').innerHTML = this.responseText;
+                    var firstElement = JSON.parse(this.responseText)[0];
+                    console.log(firstElement);
+                    document.getElementById('text').innerHTML = JSON.stringify(firstElement);
                 } else if(this.status == 404){
                     document.getElementById('text').innerHTML = 'Not found';
                 }
