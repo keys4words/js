@@ -4,19 +4,37 @@ const App = {
             placeholderString: 'Input name of note',
             title: 'List Notes',
             inputValue: '',
-            notes: ['Note One', 'Note Two', 'Note #3']
+            notes: ["Note One", 'Note Two']
         }
     },
     methods: {
-        inputChangeHandler(event) {
-            this.inputValue = event.target.value
-        },
         addNewNote(){
-            this.notes.push(this.inputValue)
-            this.inputValue = ''
+            if (this.inputValue !== ''){
+                this.notes.push(this.inputValue)
+                this.inputValue = ''
+            }
         },
+
+        toUpperCase(item){
+            return item.toUpperCase()
+        },
+
         removeNote(index){
             this.notes.splice(index, 1)
+        },
+
+    },
+    computed: {
+        doubleCountComputed(){
+            console.log('doubleCountComputed');
+            return this.notes.length * 2
+        }
+    },
+    watch: {
+        inputValue(value){
+            if (value.length > 10) {
+                this.inputValue = ''
+            }
         }
     }
 }

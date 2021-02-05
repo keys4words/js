@@ -9,21 +9,36 @@
 <body>
     <div class="container" id="app">
         <div class="card">
-            <h1>{{ title }}</h1>
+            <h1 :style="{
+                color: inputValue.length < 5 ? 'darkred' : 'darkblue',
+                fontSize: inputValue.length < 6 ? '2rem' : '3rem'
+            }">{{ title }}</h1>
             <div class="form-control">
                 <input 
                     type="text" 
-                    v-bind:placeholder="placeholderString" 
-                    v-bind:value="inputValue"
-                    v-on:input="inputChangeHandler"
-                    v-on:keypress.enter="addNewNote"    
+                    :placeholder="placeholderString" 
+                    v-model="inputValue"
+                    @keypress.enter="addNewNote"    
                 >
             </div>
-            <button class="btn" v-on:click="addNewNote">Add</button>
+            <button class="btn" @click="addNewNote">Add</button>
             <hr>
-            <ul class="list">
-                <li class="list-item" v-for="(note, index) in notes">#{{ index+1 }} {{ note }} <button class="btn danger" v-on:click="removeNote(index)">Remove</button></li>
+            <ul class="list" v-if="notes.length !== 0">
+                <li class="list-item" v-for="(note, index) in notes">
+                    <!-- <span :class="note.length > 5 ? 'primary' : 'danger'">#{{ index+1 }} {{ toUpperCase(note) }}</span> -->
+                    <!-- <span :class="{
+                        'primary': true,
+                        'danger': note.length > 5
+                    }">#{{ index+1 }} {{ toUpperCase(note) }}</span> -->
+                    <span :class="[
+                        'primary',
+                        {'danger': note.length > 5}
+                    ]">#{{ index+1 }} {{ toUpperCase(note) }}</span>
+                    <button class="btn danger" @click="removeNote(index)">Remove</button></li>
+                <hr>
+                <li><strong>Total: {{ notes.length }} notes</strong> | Double: {{ doubleCountComputed }}</li>
             </ul>
+            <div v-else>List is empty</div>
         </div>
     </div>
     
