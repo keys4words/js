@@ -7,6 +7,24 @@ Vue.createApp({
             lastName: 'IV',
             age: 35
         },
-        items: [43, 55, 1, 87]
-    })
+        items: [44, 56, 1, 88, 73]
+    }),
+    methods: {
+        addItem(event){
+            this.items.unshift(this.$refs.myInput.value)
+            this.$refs.myInput.value = ''
+            console.log(event.key)
+        },
+        remove(i){
+            this.items.splice(i, 1)
+        },
+        log(item){
+            console.log(item);
+        }
+    },
+    computed: {
+        evenItems(){
+            return this.items.filter(i => i%2 === 0)
+        }
+    }
 }).mount('#app')
