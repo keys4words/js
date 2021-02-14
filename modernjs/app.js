@@ -67,3 +67,65 @@ console.log(Number.parseInt('47')+2)
 console.log((0.4+0.2).toFixed(1))
 console.log(Math.pow(Math.PI, 3))
 console.log('maximum of list: ', Math.max(42, 23, 5, 99))
+
+let newName = 'Johny Depp'
+
+function getAge(){
+    return 52
+}
+console.log(`Hey, I'm ${newName}! I'm ${getAge()} years old.`)
+console.log(`
+    <div>
+        <p>Hello,guy!</p>
+    </div>
+`)
+console.log(newName.charAt(2))
+console.log(newName.indexOf('ny'))
+
+//function sayHello(firstName, lastName, age){
+    //return `Hi, ${firstName} ${lastName} with ${age}`
+//}
+
+//console.log(sayHello`James, Bond, 37`)
+
+//counter = 0
+//setInterval(function(){
+//  console.log(counter++)
+//}, 1000)
+
+const greet = (name) => {
+  console.log('Hey,', name)
+}
+
+//greet('Den')
+
+const greet2 = name => console.log('Good morning, ', name)
+//greet('Maxim')
+
+const mysqr = num => num ** 2
+//console.log(mysqr(5))
+
+
+const summ = (a, b=10) => a+b
+console.log(summ(34, 2))
+console.log(summ(10))
+
+
+function summ2(...args) {
+    let res = 0
+    for (let el of args){
+        res += el
+    }
+    return res
+} 
+console.log(summ2(2, 3, 4))
+
+
+function createMember(name){
+    return function(lastName){
+        return name + ' ' + lastName
+    }
+}
+
+const mary = createMember('Maria')
+console.log(mary('Vladimirovna'))
