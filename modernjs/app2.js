@@ -24,6 +24,18 @@ console.log(cars)
 //console.log(people.find(person => person.budget === 59300))
 //console.log(cars.includes('Mercedes'))
 
-
+nums = [5, 2, 77, 9]
+my_sqr = el => el**0.5
 console.log(cars.map(car => car.toUpperCase()))
+console.log(nums.map(el => el**2).map(my_sqr))
+new_arr = nums.concat(nums.map(el => el**3))
+console.log('new arr', new_arr)
+console.log('filtering arr > 100', new_arr.filter(el => el > 100))
 
+const summaryBudget = people
+    .filter(person => person.budget > 1500)
+    .reduce(function(acc, person){
+    acc += person.budget
+    return acc
+}, 0)
+console.log(summaryBudget)
