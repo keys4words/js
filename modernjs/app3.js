@@ -21,49 +21,39 @@ const person = {
 //console.log(person)
 
 
-//const {name, isBoxer, greet} = person
-//console.log(name, isBoxer, greet())
+// const {name, isBoxer, greet} = person
+// console.log(name, isBoxer, greet())
 
-//for (let key in person) {
-    //if (person.hasOwnProperty(key)) {
-        //console.log(key + ' -> ' + person[key])
-    //}
-//}
-
-//const keys = Object.keys(person)
-//console.log(keys)
-//keys.forEach( key => console.log(key + '-> ' + person[key]) )
-
-
-//person.info()
+// for (let key in person) {
+//     if (person.hasOwnProperty(key)) {
+//         console.log(key + ' -> ' + person[key])
+//     }
+// }
 
 const logger = {
     keys() {
-        console.log('Object Keys: ', Object.keys(this))
+        console.log('Object keys: ', Object.keys(this))
     },
     keysAndValues(){
-        Object.keys(this).forEach(key => {
+        Object.keys(this).forEach(function(key){
             console.log(`${key} -> ${this[key]}`)
-        })
+        }).bind(this)
     },
-    withParams(top=false, between=false, botton=false){
-        if (top) {
-            console.log('------------------Start---------------------')
+    withParams(top=false, between=false, bottom=false){
+        if(top){
+            console.log('--------start---------')
         }
-        Object.keys(this).forEach(key => {
-            console.log(`${key} => ${this[key]}`)
-            if (between){
-                console.log('----------------------------------------')
+        Object.keys(this).forEach((key, index, array) => {
+            console.log(`${key} -> ${this[key]}`)
+            if(between && index !== array.length-1) {
+                console.log('--------------------')
             }
         })
-        if (bottom){
-            console.log('--------------------end----------------------')
+        if(bottom){
+            console.log('--------end---------')
         }
     }
 }
 
-//const bound = logger.keys.bind(person)
-//bound()
-//logger.keys.call(person)
-//logger.keysAndValues.call(person)
-logger.withParams.call(person, true, true)
+// logger.withParams.call(person, true, true, true)
+logger.withParams.apply(person, [true, true, true])
